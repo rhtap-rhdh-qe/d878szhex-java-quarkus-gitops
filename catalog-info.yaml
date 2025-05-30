@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: d878szhex-java-quarkus-gitops
+  description: This is GitOps manifest for d878szhex-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=d878szhex-java-quarkus
+    backstage.io/kubernetes-id: d878szhex-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: d878szhex-java-quarkus
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:d878szhex-java-quarkus
